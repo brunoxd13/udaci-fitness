@@ -34,13 +34,11 @@ class History extends Component {
     </View>
   );
 
-  renderEmptyDate(formattedDate) {
-    return (
-      <View>
-        <Text>No Data for this day</Text>
-      </View>
-    );
-  }
+  renderEmptyDate = formattedDate => (
+    <View>
+      <Text>No Data for this day</Text>
+    </View>
+  );
 
   render() {
     const { entries } = this.props;
