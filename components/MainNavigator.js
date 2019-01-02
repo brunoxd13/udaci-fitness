@@ -6,10 +6,11 @@ import {
   createStackNavigator
 } from "react-navigation";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
-
 import AddEntry from "./AddEntry";
 import History from "./History";
 import EntryDetail from "./EntryDetail";
+import Live from "./Live";
+
 import { purple, white } from "../utils/colors";
 
 const TabContainer = createBottomTabNavigator(
@@ -29,6 +30,15 @@ const TabContainer = createBottomTabNavigator(
         tabBarLabel: "Add Entry",
         tabBarIcon: ({ tintColor }) => (
           <FontAwesome name="plus-square" size={30} color={tintColor} />
+        )
+      }
+    },
+    Live: {
+      screen: Live,
+      navigationOptions: {
+        tabBarLabel: "Live",
+        tabBarIcon: ({ tintColor }) => (
+          <Ionicons name="ios-speedometer" size={30} color={tintColor} />
         )
       }
     }
