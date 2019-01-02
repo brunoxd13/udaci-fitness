@@ -1,9 +1,15 @@
 import React from "react";
 import { Platform } from "react-native";
-import { createBottomTabNavigator, createAppContainer } from "react-navigation";
+import {
+  createBottomTabNavigator,
+  createAppContainer,
+  createStackNavigator
+} from "react-navigation";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+
 import AddEntry from "./AddEntry";
 import History from "./History";
+import EntryDetail from "./EntryDetail";
 import { purple, white } from "../utils/colors";
 
 const TabContainer = createBottomTabNavigator(
@@ -48,4 +54,19 @@ const TabContainer = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(TabContainer);
+const MainNavigator = createStackNavigator({
+  Home: {
+    screen: TabContainer
+  },
+  EntryDetail: {
+    screen: EntryDetail,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: purple
+      }
+    }
+  }
+});
+
+export default createAppContainer(MainNavigator);
