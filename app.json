@@ -2,28 +2,31 @@
   "expo": {
     "name": "UdaciFitness",
     "slug": "UdaciFitness",
+    "description": "The best triathlon training app in the world.",
     "privacy": "public",
     "sdkVersion": "31.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/gym.png",
+    "notification": {
+      "icon": "./assets/gym-64.png"
+    },
+    "ios": {
+      "bundleIdentifier": "org.udacifitness.exp",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "org.udacifitness.exp"
+    },
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/gym.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    }
+    "assetBundlePatterns": ["**/*"]
   }
 }
