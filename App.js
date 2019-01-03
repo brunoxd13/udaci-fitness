@@ -8,8 +8,13 @@ import reducer from "./reducers";
 import MainNavigator from "./components/MainNavigator";
 import UdaciStatusBar from "./components/UdaciStatusBar";
 import { purple } from "./utils/colors";
+import { setLocalNotification } from "./utils/helpers";
 
 export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification();
+  }
+
   render() {
     return (
       <Provider store={createStore(reducer)}>
